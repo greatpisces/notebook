@@ -1,0 +1,24 @@
+{
+  "title": "Java Netty",
+  "filePath": "/info.html",
+  "subMenus": [
+    {
+      "title": "Netty Start",
+      "filePath": "/chapter/netty_start.html",
+      "subMenus": [
+        {
+          "title": "Netty Discard Server",
+          "filePath": "/chapter/start/netty_discard_server.html"
+        },
+        {
+          "title": "Netty Echo Server",
+          "filePath": "/chapter/start/netty_echo_server.html"
+        },
+        {
+          "title": "Netty Time Server",
+          "filePath": "/chapter/start/netty_time_server.html"
+        }
+      ]
+    }
+  ]
+}

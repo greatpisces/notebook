@@ -1,0 +1,188 @@
+<div>
+    <div class="title mb-3">Thread</div>
+    <div class="divider"></div>
+    <div class="content">
+        <ul>
+            <li>Thread: A thread is a thread of execution in a program.
+                The Java Virtual Machine allows an application to have multiple threads of execution running concurrently.</li>
+            <li>Runnable: The Runnable interface should be implemented by any class
+                whose instances are intended to be class must define a method of no arguments called run.</li>
+            <li>ThreadLocal: 保存线程变量</li>
+            <li>InheritableThreadLocal: 可继承的ThreadLocal</li>
+            <li>Timer: A facility for threads to schedule tasks for future execution in a background thread</li>
+            <li>TimerTask: A task that can be scheduled for one-time or repeated execution by a Timer</li>
+            <li>Executors: Factory and utility methods</li>
+            <li>ExecutorService: An Executor that provides methods to manage termination and methods that can produce a Future
+                for tracking progress of one or more asynchronous tasks.</li>
+            <li>Callable: A task that returns a result and may throw an exception</li>
+            <li>Future: A Future represents the result of an asynchronous computation</li>
+            <li>CountDownLatch: A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes</li>
+            <li>CyclicBarrier: A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point.
+                it can be re-used after the waiting threads are released</li>
+            <li>Exchanger: A synchronization point at which threads can pair and swap elements within pairs</li>
+            <li>Phaser: A reusable synchronization barrier, similar in functionality to CyclicBarrier and CountDownLatch but supporting more flexible usage</li>
+            <li>Semaphore: A counting semaphore</li>
+            <li>Lock: Lock implementations provide more extensive locking operations than can be obtained using synchronized methods and statements</li>
+            <li>Condition: Condition factors out the Object monitor methods</li>
+            <li>ReentrantLock: A reentrant mutual exclusion Lock with the same basic behavior and semantics as the implicit monitor lock accessed using
+                synchronized methods and statements, but with extended capabilities.</li>
+            <li>ReadWriteLock: A ReadWriteLock maintains a pair of associated Lock, one for read-only operations and one for writing</li>
+            <li>ReentrantReadWriteLock: An implementation of ReadWriteLock supporting similar semantics to ReentrantLock</li>
+            <li>CompletionService: A service that decouples the production of new asynchronous tasks from the consumption of the results of completed tasks</li>
+            <li>ExecutorCompletionService: A CompletionService that uses a supplied Executor to execute tasks</li>
+            <li>ForkJoinPool: A ForkJoinPool provides the entry point for submissions from non-ForkJoinTask clients, as well as management and monitoring operations</li>
+        </ul>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Thread</div>
+        <ul>
+            <li>priority: 高优先级的优先执行，默认优先级与创建时的线程优先级一致</li>
+        </ul>
+        <key-value-list>
+            <key-value-item item-key="Thread()">构造方法</key-value-item>
+            <key-value-item item-key="Thread(String name)">构造方法</key-value-item>
+            <key-value-item item-key="Thread(Runnable target, String name)">构造方法</key-value-item>
+            <key-value-item item-key="Thread(Runnable target)">构造方法</key-value-item>
+            <key-value-item item-key="static native Thread currentThread()">返回当前线程</key-value-item>
+            <key-value-item item-key="final String getName()">返回名称</key-value-item>
+            <key-value-item item-key="final synchronized void setName(String name)">设置名称</key-value-item>
+            <key-value-item item-key="final native boolean isAlive()">判断是否存在</key-value-item>
+            <key-value-item item-key="State getState()">获取状态</key-value-item>
+            <key-value-item item-key="final void setDaemon(boolean on)">设置为守护进程</key-value-item>
+            <key-value-item item-key="synchronized void start()">执行线程</key-value-item>
+            <key-value-item item-key="void interrupt()">中断线程</key-value-item>
+            <key-value-item item-key="boolean isInterrupted()">判断是否中断</key-value-item>
+            <key-value-item item-key="final void join() throws InterruptedException">等待线程die</key-value-item>
+            <key-value-item item-key="static native void sleep(long millis) throws InterruptedException">正在执行中的线程休眠</key-value-item>
+            <key-value-item item-key="final void wait() throws InterruptedException">当前线程等待直到另一个线程唤醒</key-value-item>
+            <key-value-item item-key="final native void notify()">唤醒一个等待该对象控制权的对象</key-value-item>
+            <key-value-item item-key="void setUncaughtExceptionHandler(UncaughtExceptionHandler eh)">设置线程突然终止时的处理方法</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ThreadLocal</div>
+        <key-value-list>
+            <key-value-item item-key="ThreadLocal()">构造方法</key-value-item>
+            <key-value-item item-key="void set(T value)">保存</key-value-item>
+            <key-value-item item-key="T get()">获取</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Timer</div>
+        <key-value-list>
+            <key-value-item item-key="Timer()">构造方法</key-value-item>
+            <key-value-item item-key="void schedule(TimerTask task, long delay)">一段时间后执行一次</key-value-item>
+            <key-value-item item-key="void schedule(TimerTask task, long delay, long period)">周期执行</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Executors</div>
+        <key-value-list>
+            <key-value-item item-key="static ExecutorService newFixedThreadPool(int nThreads)">创建一个固定数量的线程池</key-value-item>
+            <key-value-item item-key="<T> Future<T> submit(Callable<T> task)">提交一个任务，返回一个结果标志</key-value-item>
+            <key-value-item item-key="List<Runnable> shutdownNow()">停止正在进行的任务，返回所有等待执行的任务</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>CountDownLatch</div>
+        <key-value-list>
+            <key-value-item item-key="CountDownLatch(int count)">以一个计数初始化</key-value-item>
+            <key-value-item item-key="void await() throws InterruptedException">阻塞知道线程为0</key-value-item>
+            <key-value-item item-key="void countDown()">减少计数</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>CyclicBarrier</div>
+        <key-value-list>
+            <key-value-item item-key="CyclicBarrier(int parties, Runnable barrierAction)">构造函数，参与线程的数量和全部线程完成时执行的方法</key-value-item>
+            <key-value-item item-key="CyclicBarrier(int parties)">构造函数</key-value-item>
+            <key-value-item item-key="int await() throws InterruptedException, BrokenBarrierException">等待知道所有的线程到达壁</key-value-item>
+            <key-value-item item-key="boolean isBroken()">是否为broken状态</key-value-item>
+            <key-value-item item-key="void reset()">重置到初始状态</key-value-item>
+            <key-value-item item-key="int getNumberWaiting()">等待中的线程数量</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Exchanger</div>
+        <key-value-list>
+            <key-value-item item-key="Exchanger()">构造函数</key-value-item>
+            <key-value-item item-key="V exchange(V x) throws InterruptedException">交换数据</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Phaser</div>
+        <key-value-list>
+            <key-value-item item-key="Phaser(int parties)">构造函数，未到达的数量</key-value-item>
+            <key-value-item item-key="int arriveAndAwaitAdvance()">到达并等待其他线程</key-value-item>
+            <key-value-item item-key="int arriveAndDeregister()">到达并解除注册</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Semaphore</div>
+        <key-value-list>
+            <key-value-item item-key="Semaphore(int permits, boolean fair)">构造函数，permit数量，是否为FIFO策略</key-value-item>
+            <key-value-item item-key="void acquire() throws InterruptedException">阻塞知道获取permit</key-value-item>
+            <key-value-item item-key="void release()">释放一个permit</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Lock</div>
+        <key-value-list>
+            <key-value-item item-key="void lock()">获得锁</key-value-item>
+            <key-value-item item-key="boolean tryLock()">能获取锁时获取锁</key-value-item>
+            <key-value-item item-key="void unlock()">解锁</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Condition</div>
+        <key-value-list>
+            <key-value-item item-key="void await() throws InterruptedException">wait()</key-value-item>
+            <key-value-item item-key="void signal()">notify()</key-value-item>
+            <key-value-item item-key="void signalAll()">notifyAll()</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ReentrantLock</div>
+        <key-value-list>
+            <key-value-item item-key="ReentrantLock(boolean fair)">构造方法，是否公平</key-value-item>
+            <key-value-item item-key="boolean isHeldByCurrentThread()">是否为当前线程持有</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ReadWriteLock</div>
+        <key-value-list>
+            <key-value-item item-key="Lock readLock()"></key-value-item>
+            <key-value-item item-key="Lock writeLock()"></key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ReentrantReadWriteLock</div>
+        <key-value-list>
+            <key-value-item item-key="Lock readLock()"></key-value-item>
+            <key-value-item item-key="Lock writeLock()"></key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>CompletionService</div>
+        <key-value-list>
+            <key-value-item item-key="Future<V> submit(Callable<V> task)"></key-value-item>
+            <key-value-item item-key="Future<V> submit(Runnable task, V result)"></key-value-item>
+            <key-value-item item-key="Future<V> take() throws InterruptedException"></key-value-item>
+            <key-value-item item-key="Future<V> poll()"></key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ExecutorCompletionService</div>
+        <key-value-list>
+            <key-value-item item-key="ExecutorCompletionService(Executor executor)"></key-value-item>
+            <key-value-item item-key="ExecutorCompletionService(Executor executor, BlockingQueue<Future<V>> completionQueue)"></key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ForkJoinPool</div>
+        <key-value-list>
+            <key-value-item item-key="ForkJoinPool()"></key-value-item>
+            <key-value-item item-key="<T> T invoke(ForkJoinTask<T> task)"></key-value-item>
+        </key-value-list>
+    </div>
+</div>

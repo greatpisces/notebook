@@ -1,0 +1,12 @@
+{
+  "noteName": "typescript_note",
+  "version": "0.0.1",
+  "noteDir": "/typescript_note",
+  "menus": [
+    {
+      "title": "Typescript Syntax",
+      "type": "module",
+      "modulePath": "/typescript_syntax"
+    }
+  ]
+}

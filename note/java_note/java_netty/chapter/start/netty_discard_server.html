@@ -1,0 +1,69 @@
+<div>
+    <note-paragraph label="Discard Server" level="main">
+        <ul>
+            <li>Discard: a protocol that discards any received data without any response</li>
+        </ul>
+    </note-paragraph>
+    <note-paragraph label="example">
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/DiscardServer.java')}}"></div>
+            <note-api method="io.netty.channel.EventLoopGroup">
+                <p>
+                    NioEventLoopGroup is a multithreaded event loop that handles I/O operation
+                </p>
+                <p>
+                    一个I/O操作的多线程事件循环
+                </p>
+            </note-api>
+            <note-api method="io.netty.bootstrap.ServerBootstrap">
+                <p>
+                    ServerBootstrap is helper class that sets up a server
+                </p>
+                <p>
+                    启动服务的辅助类
+                </p>
+            </note-api>
+            <note-api method="public ServerBootstrap group(EventLoopGroup parentGroup, EventLoopGroup childGroup)">
+                <p>
+                    The first one, often called 'boss', accepts an incoming connection.
+                    The second one, often called 'worker', handles the traffic of the accepted connection
+                    once the boss accepts the connection and registers the accepted connection to the worker
+                </p>
+            </note-api>
+            <note-api method="public B channel(Class<? extends C> channelClass)">
+                <p>
+                    specify to use the NioServerSocketChannel class which is used to instantiate a new Channel to accept incoming connections
+                </p>
+            </note-api>
+            <note-api method="public abstract class ChannelInitializer<C extends Channel> extends ChannelInboundHandlerAdapter">
+                <p>
+                    The ChannelInitializer is a special handler that is purposed to help a user configure a new Channel
+                    add more handlers to the pipeline and extract this anonymous class into a top-level class
+                </p>
+            </note-api>
+        </div>
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/DiscardServerHandler.java')}}"></div>
+            <note-api method="io.netty.channel.ChannelInboundHandlerAdapter">
+                <p>
+                    ChannelInboundHandler provides various event handler methods that you can override
+                </p>
+            </note-api>
+            <note-api method="public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception">
+                <p>
+                    this method is called with the received message, whenever new data is received from a client
+                </p>
+                <p>
+                    ((ByteBuf) msg).release();
+                </p>
+            </note-api>
+            <note-api method="public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception">
+                <p>
+                    this method is called with a Throwable when an exception was raised by Netty due to an I/O error
+                    or by a handler implementation due to the exception thrown while processing events
+                    In most cases, the caught exception should be logged and its associated channel should be closed here
+                </p>
+            </note-api>
+        </div>
+    </note-paragraph>
+</div>

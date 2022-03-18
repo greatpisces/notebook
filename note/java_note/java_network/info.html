@@ -1,0 +1,173 @@
+<div xmlns="http://www.w3.org/1999/html">
+    <div class="title mb-3">Java Network</div>
+    <div class="divider"></div>
+    <div class="content">
+        <ul>
+            <li>java.net.InetAddress: ip地址</li>
+            <li>java.net.URL: a Uniform Resource Locator, a pointer to a "resource" on the World Wide Web</li>
+            <li>java.net.URLConnection: a communications link between the application and a URL</li>
+            <li>java.net.ServerSocket: A server socket waits for requests to come in over the network</li>
+            <li>java.net.Socket: A socket is an endpoint for communication between two machines</li>
+            <li>java.net.DatagramSocket: A socket for sending and receiving datagram packets</li>
+            <li>java.net.DatagramPacket: Datagram packets are used to implement a connectionless packet delivery service</li>
+            <li>java.net.MulticastSocket: A MulticastSocket is a (UDP) DatagramSocket, with additional capabilities for joining "groups" of other multicast hosts on the internet.</li>
+        </ul>
+
+        <note-paragraph label="InetAddress常用方法">
+            <note-api method="String toString()">
+                <p>
+                    Converts this IP address to a String.<br>
+                    The string returned is of the form: hostname / literal IP address.<br>
+                    If the host name is unresolved, no reverse name service lookup is performed.<br>
+                    The hostname part will be represented by an empty string.<br>
+                    Returns:a string representation of this IP address.<br>
+                </p>
+                <br>
+                <p>
+                    将类代表的字符串转换为字符出。<br>
+                    转换格式：hostname / literal IP address，例如www.baidu.com/180.101.49.11。<br>
+                    主机名未被解析时默认值为空字符出。<br>
+                </p>
+            </note-api>
+            <note-api method="String getCanonicalHostName()">
+                <p>
+                    ip地址的全域名
+                </p>
+            </note-api>
+            <note-api method="String getHostAddress()">
+                <p>
+                    ip域名
+                </p>
+            </note-api>
+            <note-api method="boolean isReachable(int timeout)">
+                <p>
+                    时间内可访问
+                </p>
+            </note-api>
+        </note-paragraph>
+
+        <note-paragraph label="URL常用方法">
+            <note-api method="URLConnection openConnection() throws IOException">
+                <p>
+                    返回一个连接实例
+                </p>
+            </note-api>
+        </note-paragraph>
+
+        <note-paragraph label="URLConnection常用方法">
+            <note-api method="InputStream getInputStream() throws IOException">
+                <p>
+                    获取输入流
+                </p>
+                <div lang="java" highlight="{{moduleFilePath('/script/URLConnection.java')}}"></div>
+            </note-api>
+        </note-paragraph>
+
+        <note-paragraph label="ServerSocket常用方法">
+            <note-api method="ServerSocket(int port) throws IOException">
+                <p>
+                    创建实例
+                </p>
+            </note-api>
+            <note-api method="Socket accept() throws IOException">
+                <p>
+                    监听链接并创建socket,直至创建之前都阻塞
+                </p>
+            </note-api>
+            <note-api method="InputStream getInputStream() throws IOException">
+                <p>
+                    输入
+                </p>
+            </note-api>
+            <note-api method="OutputStream getOutputStream() throws IOException">
+                <p>
+                    输出
+                </p>
+            </note-api>
+        </note-paragraph>
+
+        <note-paragraph label="Socket常用方法">
+            <note-api method="Socket(InetAddress address, int port) throws IOException">
+                <p>
+                    创建实例
+                </p>
+            </note-api>
+            <note-api method="Socket(String host, int port) throws UnknownHostException, IOException">
+                <p>
+                    创建实例
+                </p>
+            </note-api>
+            <note-api method="InputStream getInputStream() throws IOException">
+                <p>
+                    输入
+                </p>
+            </note-api>
+            <note-api method="OutputStream getOutputStream() throws IOException">
+                <p>
+                    输出
+                </p>
+            </note-api>
+            <div lang="java" highlight="{{moduleFilePath('/script/SimpleEcho.java')}}"></div>
+        </note-paragraph>
+
+        <note-paragraph label="DatagramSocket常用方法">
+            <note-api method="DatagramSocket() throws SocketException">
+                <p>
+                    创建实例
+                </p>
+            </note-api>
+            <note-api method="DatagramSocket(int port) throws SocketException">
+                <p>
+                    创建实例,监听端口
+                </p>
+            </note-api>
+            <note-api method="synchronized void bind(SocketAddress addr) throws SocketException">
+                <p>
+                    绑定地址
+                </p>
+            </note-api>
+            <note-api method="void send(DatagramPacket p) throws IOException">
+                <p>
+                    发送数据块
+                </p>
+            </note-api>
+            <note-api method="synchronized void receive(DatagramPacket p) throws IOException">
+                <p>
+                    接收数据块
+                </p>
+            </note-api>
+        </note-paragraph>
+
+        <note-paragraph label="DatagramPacket常用方法">
+            <note-api method="DatagramPacket(byte buf[], int length, InetAddress address, int port)">
+                <p>
+                    创建实例
+                </p>
+            </note-api>
+        </note-paragraph>
+
+        <note-paragraph label="MulticastSocket常用方法">
+            <note-api method="MulticastSocket(int port) throws IOException">
+                <p>
+                    创建实例
+                </p>
+            </note-api>
+            <note-api method="void joinGroup(InetAddress mcastaddr) throws IOException">
+                <p>
+                    加入多播组
+                </p>
+            </note-api>
+            <note-api method="synchronized void receive(DatagramPacket p) throws IOException">
+                <p>
+                    接收数据块
+                </p>
+            </note-api>
+            <note-api method="void leaveGroup(InetAddress mcastaddr) throws IOException">
+                <p>
+                    离开多播组
+                </p>
+            </note-api>
+            <div lang="java" highlight="{{moduleFilePath('/script/Multicast.java')}}"></div>
+        </note-paragraph>
+    </div>
+</div>

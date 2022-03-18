@@ -1,0 +1,54 @@
+<div>
+    <note-paragraph label="Time Server" level="main">
+        <p>
+            Time: a protocol of sent time
+        </p>
+    </note-paragraph>
+    <note-paragraph label="example">
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/TimeServerHandler.java')}}"></div>
+            <note-api method="public void channelActive(ChannelHandlerContext ctx) throws Exception">
+                <p>
+                    will be invoked when a connection is established and ready to generate traffic
+                </p>
+            </note-api>
+            <note-api method="ctx.alloc().buffer(4)">
+                <p>
+                    allocate a new buffer which will contain the message
+                </p>
+            </note-api>
+        </div>
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/TimeClientHandler.java')}}"></div>
+        </div>
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/TimeClient.java')}}"></div>
+        </div>
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/TimeDecoder.java')}}"></div>
+            <note-api method="public abstract class ByteToMessageDecoder extends ChannelInboundHandlerAdapter">
+                <p>
+                    an implementation of ChannelInboundHandler which makes it easy to deal with the fragmentation issue
+                </p>
+            </note-api>
+            <note-api method="protected abstract void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception">
+                <p>
+                    ByteToMessageDecoder calls the decode() method with an internally maintained cumulative buffer whenever new data is received.
+                    decide to add nothing to out when there is not enough data in the cumulative buffer.
+                    call again when there is more data received.
+                </p>
+            </note-api>
+            <note-api method="out.add(in.readBytes(4))">
+                <p>
+                    if decode() adds an object to out, it means the decoded a message successfully
+                </p>
+            </note-api>
+        </div>
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/TimeEncoder.java')}}"></div>
+        </div>
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/UnixTime.java')}}"></div>
+        </div>
+    </note-paragraph>
+</div>

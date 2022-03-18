@@ -1,0 +1,18 @@
+{
+  "title": "Java Syntax",
+  "filePath": "/info.html",
+  "subMenus": [
+    {
+      "title": "Java Annotation",
+      "filePath": "/chapter/java_annotation.html"
+    },
+    {
+      "title": "Java Lambda",
+      "filePath": "/chapter/java_lambda.html"
+    },
+    {
+      "title": "Java Method Reference",
+      "filePath": "/chapter/java_method_reference.html"
+    }
+  ]
+}

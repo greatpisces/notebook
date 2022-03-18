@@ -1,0 +1,30 @@
+<div>
+    <div class="title mb-3">HTTP</div>
+    <div class="divider"></div>
+    <div class="content">
+        <ul>
+            <li>HttpURLConnection: A URLConnection with support for HTTP-specific features</li>
+        </ul>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>HttpURLConnection</div>
+        <key-value-list>
+            <key-value-item item-key="void setRequestMethod(String method) throws ProtocolException">设置请求方法</key-value-item>
+            <key-value-item item-key="void setRequestProperty(String key, String value)">设置请求属性</key-value-item>
+            <key-value-item item-key="int getResponseCode() throws IOException">获取相应状态码</key-value-item>
+            <key-value-item item-key="Map<String,List<String>> getHeaderFields()">获取头属性</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>HttpURLConnection</div>
+        <div highlight="{{moduleFilePath('/../script/HttpURLConnection.java')}}"></div>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>HTTP Example</div>
+        <div highlight="{{moduleFilePath('/../script/HTTP.java')}}"></div>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>SunHTTPServer</div>
+        <div highlight="{{moduleFilePath('/../script/SunHTTPServer.java')}}"></div>
+    </div>
+</div>

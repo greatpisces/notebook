@@ -1,0 +1,29 @@
+<div>
+    <div class="title mb-3">Lambda表达式</div>
+    <div class="divider"></div>
+    <div class="content">
+        <p class="paragraph">函数接口定义</p>
+        <p class="paragraph">Predicate</p>
+        <div highlight="{{moduleFilePath('/../script/Predicate.java')}}"></div>
+        <p class="paragraph">Comparator</p>
+        <div highlight="{{moduleFilePath('/../script/Comparator.java')}}"></div>
+        <p class="paragraph">Consumer</p>
+        <div highlight="{{moduleFilePath('/../script/Consumer.java')}}"></div>
+        <p class="paragraph">Function</p>
+        <div highlight="{{moduleFilePath('/../script/Function.java')}}"></div>
+        <div>
+            <p class="paragraph">函数式接口</p>
+            <ul>
+                <li>Predicate&lt;T&gt; T -> boolean</li>
+                <li>Consumer&lt;T&gt; T -> void</li>
+                <li>Function&lt;T, R&gt; T -> R</li>
+                <li>Supplier&lt;T&gt; () -> T</li>
+                <li>UnaryOperator&lt;T&gt; T -> T</li>
+                <li>BinaryOperator&lt;T&gt; (T, T) -> T</li>
+                <li>BiPredicate&lt;L, R&gt; (L, R) -> boolean</li>
+                <li>BiConsumer&lt;T, U&gt; (T, U) -> void</li>
+                <li>BiFunction&lt;T, U, R&gt; (T, U) -> R</li>
+            </ul>
+        </div>
+    </div>
+</div>

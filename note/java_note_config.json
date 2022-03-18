@@ -1,0 +1,27 @@
+{
+  "noteName": "java_note",
+  "version": "0.0.1",
+  "noteDir": "/java_note",
+  "menus": [
+    {
+      "title": "Java Syntax",
+      "type": "module",
+      "modulePath": "/java_syntax"
+    },
+    {
+      "title": "Java Network",
+      "type": "module",
+      "modulePath": "/java_network"
+    },
+    {
+      "title": "Java Thread",
+      "type": "module",
+      "modulePath": "/java_thread"
+    },
+    {
+      "title": "Java Netty",
+      "type": "module",
+      "modulePath": "/java_netty"
+    }
+  ]
+}

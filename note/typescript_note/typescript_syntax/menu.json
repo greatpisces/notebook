@@ -1,0 +1,30 @@
+{
+  "title": "Typescript Syntax",
+  "filePath": "/info.html",
+  "subMenus": [
+    {
+      "title": "Typescript Type",
+      "filePath": "/chapter/typescript_type.html"
+    },
+    {
+      "title": "Typescript Function",
+      "filePath": "/chapter/typescript_function.html"
+    },
+    {
+      "title": "Typescript Class",
+      "filePath": "/chapter/typescript_class.html"
+    },
+    {
+      "title": "Typescript Interface",
+      "filePath": "/chapter/typescript_interface.html"
+    },
+    {
+      "title": "Typescript Decorator",
+      "filePath": "/chapter/typescript_decorator.html"
+    },
+    {
+      "title": "Typescript Module",
+      "filePath": "/chapter/typescript_module.html"
+    }
+  ]
+}

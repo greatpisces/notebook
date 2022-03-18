@@ -1,0 +1,15 @@
+{
+  "noteName": "dev",
+  "version": "0.0.1",
+  "noteDir": "",
+  "menus": [
+    {
+      "title": "Dev Template",
+      "filePath": "/template.html"
+    },
+    {
+      "title": "Dev Log",
+      "filePath": "/dev_log.html"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Raspberrypi Start",
+  "filePath": "/info.html",
+  "subMenus": [
+    {
+      "title": "Raspberrypi Install",
+      "filePath": "/chapter/raspberrypi_install.html"
+    },
+    {
+      "title": "Raspberrypi Config",
+      "filePath": "/chapter/raspberrypi_config.html"
+    }
+  ]
+}

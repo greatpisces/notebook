@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>notebook</title>
+    <link rel="icon" href="./notebook.svg" sizes="16x16">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.5.0/styles/androidstudio.min.css">
+    <script src="https://cdn.staticfile.org/angular.js/1.8.2/angular.js"></script>
+    <script src="https://cdn.staticfile.org/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="https://cdn.staticfile.org/highlight.js/11.5.0/languages/javascript.min.js"></script>
+    <script src="https://cdn.staticfile.org/highlight.js/11.5.0/languages/typescript.min.js"></script>
+    <script src="https://cdn.staticfile.org/highlight.js/11.5.0/languages/shell.min.js"></script>
+    <script src="./js/app.js"></script>
+
+</head>
+<body ng-app="notebook">
+    <div class="w-100 h-100 d-flex" ng-controller="noteCtrl">
+        <div class="w-75 h-100 d-flex">
+            <div ng-include="notePath" class="w-100 mt-5 mb-5 ml-5 mr-5 p-3 bg-white overflow-y" style="border: 1px solid #cbced1;border-radius: 0.2rem;">
+
+            </div>
+        </div>
+        <div class="w-25 h-100 d-flex">
+            <div class="w-100 mt-5 mb-5 ml-2 mr-2 p-3 overflow-y">
+                <div class="w-100 mb-2 menu-title">目录</div>
+                <div class="divider mb-2"></div>
+                <div class="menu-group">
+                    <menu-item ng-repeat="menu in menus" item-data="menu" select-item="select(item)" selected-item="selectedItem"></menu-item>
+                </div>
+            </div>
+        </div>
+        <div ng-show="openSiderbar" class="modal-overlay"></div>
+        <aside ng-show="openSiderbar" class="sidebar w-25 h-100 d-flex overflow-y bg-secondary">
+            <div class="m-1 d-flex flex-column">
+                <div class="m-1 d-flex flex-column">
+                    <div class="ml-auto mr-auto">Change Origin</div>
+                    <div>
+                        <div ng-repeat="origin in origins" ng-click="selectOrigin($index)"
+                             ng-class="{'active': isSelectedOrigin(origin)}" class="origin-item m-1 p-1">{{origin.NAME}}</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <footer class="footer w-100">
+            <div class="w-100 d-flex">
+                <em class="m-auto">工具栏:ctrl + c</em>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

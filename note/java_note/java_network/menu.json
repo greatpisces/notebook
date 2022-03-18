@@ -1,0 +1,22 @@
+{
+  "title": "Java Network",
+  "filePath": "/info.html",
+  "subMenus": [
+    {
+      "title": "Java NIO",
+      "filePath": "/chapter/java_nio.html"
+    },
+    {
+      "title": "Java HTTP",
+      "filePath": "/chapter/java_http.html"
+    },
+    {
+      "title": "Java UDP",
+      "filePath": "/chapter/java_udp.html"
+    },
+    {
+      "title": "Java Encrypt",
+      "filePath": "/chapter/java_encrypt.html"
+    }
+  ]
+}

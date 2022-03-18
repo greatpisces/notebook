@@ -1,0 +1,146 @@
+//class decorators
+function Greeter(target: Function): void {
+    target.prototype.greet = function(): void {
+        console.log('Hello!');
+    }
+}
+
+@Greeter
+class Greeting {
+    constructor() {
+        // Implementation goes here...
+    }
+}
+
+var myGreeting = new Greeting();
+myGreeting.greet();   // console outputs 'Hello!'
+
+function Greeter(greeting: string) {
+    return function(target: Function) {
+        target.prototype.greet = function(): void {
+            console.log(greeting);
+        }
+    }
+}
+
+@Greeter('Howdy!')
+class Greeting {
+    constructor() {
+        // Implementation goes here...
+    }
+}
+
+var myGreeting = new Greeting();
+myGreeting.greet(); // console outputs 'Howdy!'
+
+//property decorators
+function LogChanges(target: Object, key: string) {
+    var propertyValue: string = this[key];
+
+    if (delete this[key]) {
+        Object.defineProperty(target, key, {
+            get: function() {
+                return propertyValue;
+            },
+            set: function(newValue) {
+                propertyValue = newValue;
+                console.log(`${key} is now ${propertyValue}`);
+            }
+        });
+    }
+}
+
+class Fruit {
+    @LogChanges
+    name: string;
+}
+
+var fruit = new Fruit();
+fruit.name = 'banana';	   // console outputs 'name is now banana'
+fruit.name = 'plantain'; // console outputs 'name is now plantain'
+
+function LogChanges(callbackObject: any): void {
+    return function(target: Object, key: string): void {
+        var propertyValue: string = this[key];
+        if (delete this[key]) {
+            Object.defineProperty(target, key, {
+                get: function() {
+                    return propertyValue;
+                },
+                set: function(newValue) {
+                    propertyValue = newValue;
+                    callbackObject.onchange.call(this, propertyValue)
+                }
+            });
+        }
+    }
+}
+
+class Fruit {
+    @LogChanges({
+        onchange: function(newValue: string): void {
+            console.log(`The fruit is ${newValue} now`);
+        }
+    })
+    name: string;
+}
+
+var fruit = new Fruit();
+fruit.name = 'banana';	   // console: 'The fruit is banana now'
+fruit.name = 'plantain'; // console: 'The fruit is plantain now'
+
+//method decorators
+function LogOutput(target: Function, key: string, descriptor: any) {
+    var originalMethod = descriptor.value;
+    var newMethod = function(...args: any[]): any {
+        var result: any = originalMethod.apply(this, args);
+        if (!this.loggedOutput) {
+            this.loggedOutput = new Array<any>();
+        }
+        this.loggedOutput.push({
+            method: key,
+            parameters: args,
+            output: result,
+            timestamp: new Date()
+        });
+        return result;
+    };
+
+    descriptor.value = newMethod;
+}
+
+class Calculator {
+    @LogOutput
+    double(num: number): number {
+        return num * 2;
+    }
+}
+
+var calc = new Calculator();
+calc.double(11);
+
+console.log(calc.loggedOutput); // Check [Object] array in console
+
+@LogOutput
+doNothing(input: any): any {
+    return input;
+}
+
+calc.doNothing(['Angular 2 Essentials', 2016]);
+
+//parameter decorators
+function Log(target: Function, key: string, parameterIndex: number) {
+    var functionLogged = key || target.prototype.constructor.name;
+    console.log(`The parameter in position ${parameterIndex} at ${constructorCalled} has been decorated`);
+}
+
+class Greeter {
+    greeting: string;
+    constructor( @Log phrase: string) {
+        this.greeting = phrase;
+    }
+}
+
+// The console will output right after the class above is defined:
+// 'The parameter in position 0 at Greeter has been decorated'
+

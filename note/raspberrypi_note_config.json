@@ -1,0 +1,12 @@
+{
+  "noteName": "raspberrypi_note",
+  "version": "0.0.1",
+  "noteDir": "/raspberrypi_note",
+  "menus": [
+    {
+      "title": "Raspberrypi Start",
+      "type": "module",
+      "modulePath": "/raspberrypi_start"
+    }
+  ]
+}

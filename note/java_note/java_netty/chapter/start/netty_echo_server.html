@@ -1,0 +1,34 @@
+<div>
+    <note-paragraph label="Echo Server" level="main">
+        <p>
+            Echo: a protocol that sent back received data
+        </p>
+    </note-paragraph>
+    <note-paragraph label="example">
+        <div>
+            <div highlight="{{moduleFilePath('/../../script/start/EchoServerHandler.java')}}"></div>
+            <note-api method="io.netty.channel.channelHandlerContext">
+                <p>
+                    A channelHandlerContext object provides various operations
+                    that enable you to trigger various I/O events and operations
+                </p>
+            </note-api>
+            <note-api method="ChannelFuture write(Object msg)">
+                <p>
+                    write the received message in verbatim
+                </p>
+                <p>
+                    does not make the message written out to the wire
+                </p>
+            </note-api>
+            <note-api method="ChannelHandlerContext flush()">
+                <p>
+                    release the received message when it it written out to the wire
+                </p>
+                <p>
+                    message buffered internally and then flushed out to the wire
+                </p>
+            </note-api>
+        </div>
+    </note-paragraph>
+</div>

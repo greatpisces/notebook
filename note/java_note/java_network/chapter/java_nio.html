@@ -1,0 +1,124 @@
+<div>
+    <div class="title mb-3">Java NIO</div>
+    <div class="divider"></div>
+    <div class="content">
+        <ul>
+            <li>InetSocketAddress: an IP Socket Address</li>
+            <li>ServerSocketChannel: A selectable channel for stream-oriented listening sockets</li>
+            <li>SocketChannel: A selectable channel for stream-oriented connecting sockets</li>
+            <li>ByteBuffer</li>
+            <li>AsynchronousServerSocketChannel: An asynchronous channel for stream-oriented listening sockets</li>
+            <li>AsynchronousSocketChannel: An asynchronous channel for stream-oriented connecting sockets</li>
+            <li>Future: A Future represents the result of an asynchronous computation</li>
+            <li>DatagramChannel: A selectable channel for datagram-oriented sockets.</li>
+            <li>Selector: A selectable channel for datagram-oriented sockets.</li>
+            <li>SelectableChannel: A channel that can be multiplexed via a Selector</li>
+        </ul>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>InetSocketAddress</div>
+        <key-value-list>
+            <key-value-item item-key="InetSocketAddress(InetAddress addr, int port)">实例</key-value-item>
+            <key-value-item item-key="InetSocketAddress(int port)">本地实例</key-value-item>
+            <key-value-item item-key="InetSocketAddress(String hostname, int port)">实例</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ServerSocketChannel</div>
+        <key-value-list>
+            <key-value-item item-key="static ServerSocketChannel open() throws IOException">Opens a server-socket channel</key-value-item>
+            <key-value-item item-key="final ServerSocketChannel bind(SocketAddress local) throws IOException">绑定到本地地址，并监听链接</key-value-item>
+            <key-value-item item-key="abstract SocketChannel accept() throws IOException">接收链接并创建实例</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>SocketChannel</div>
+        <key-value-list>
+            <key-value-item item-key="static SocketChannel open(SocketAddress remote) throws IOException">Opens a socket channel and connects it to a remote address</key-value-item>
+            <key-value-item item-key="abstract int write(ByteBuffer src) throws IOException">内容写入缓冲</key-value-item>
+            <key-value-item item-key="abstract int read(ByteBuffer dst) throws IOException">内容读入缓存</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>ByteBuffer</div>
+        <key-value-list>
+            <key-value-item item-key="static ByteBuffer allocate(int capacity)">创建缓冲字节</key-value-item>
+            <key-value-item item-key="final ByteBuffer put(byte[] src)">写入字节</key-value-item>
+            <key-value-item item-key="static ByteBuffer wrap(byte[] array)">写入字节,返回实例</key-value-item>
+            <key-value-item item-key="abstract byte get()">获取字节</key-value-item>
+            <key-value-item item-key="final Buffer flip()">重置标记位</key-value-item>
+            <key-value-item item-key="final boolean hasRemaining()">是否有剩余</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>NIOEcho</div>
+        <div lang="java" highlight="{{moduleFilePath('/../script/NIOEcho.java')}}"></div>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>AsynchronousServerSocketChannel</div>
+        <key-value-list>
+            <key-value-item item-key="static AsynchronousServerSocketChannel open() throws IOException">Opens an asynchronous server-socket channel</key-value-item>
+            <key-value-item item-key="final AsynchronousServerSocketChannel bind(SocketAddress local) throws IOException">绑定到本地地址，并监听链接</key-value-item>
+            <key-value-item item-key="abstract Future<AsynchronousSocketChannel> accept()">接收链接并创建实例</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>AsynchronousSocketChannel</div>
+        <key-value-list>
+            <key-value-item item-key="boolean isOpen()">链接是否打开</key-value-item>
+            <key-value-item item-key="abstract Future<Integer> write(ByteBuffer src)">内容写入缓冲</key-value-item>
+            <key-value-item item-key="abstract Future<Integer> read(ByteBuffer dst)">内容读入缓存</key-value-item>
+            <key-value-item item-key="static AsynchronousSocketChannel open() throws IOException">创建</key-value-item>
+            <key-value-item item-key="abstract Future<Void> connect(SocketAddress remote)">连接</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Future</div>
+        <key-value-list>
+            <key-value-item item-key="V get() throws InterruptedException, ExecutionException">等待结果</key-value-item>
+            <key-value-item item-key="boolean isDone()">任务是否结束</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>AsynchronousEcho</div>
+        <div lang="java" highlight="{{moduleFilePath('/../script/AsynchronousEcho.java')}}"></div>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>DatagramChannel</div>
+        <key-value-list>
+            <key-value-item item-key="abstract DatagramSocket socket()">获取相关socket</key-value-item>
+            <key-value-item item-key="abstract SocketAddress receive(ByteBuffer dst) throws IOException">接收数据</key-value-item>
+            <key-value-item item-key="abstract DatagramChannel connect(SocketAddress remote) throws IOException">连接</key-value-item>
+            <key-value-item item-key="abstract int write(ByteBuffer src) throws IOException">写</key-value-item>
+            <key-value-item item-key="abstract int read(ByteBuffer dst) throws IOException">读</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>NIO UPD Echo</div>
+        <div lang="java" highlight="{{moduleFilePath('/../script/UDPNIOEcho.java')}}"></div>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>NIO Multicast</div>
+        <div lang="java" highlight="{{moduleFilePath('/../script/NIOMulticast.java')}}"></div>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Selector</div>
+        <key-value-list>
+            <key-value-item item-key="static Selector open() throws IOException">创建</key-value-item>
+            <key-value-item item-key="abstract Selector wakeup()">使尚未返回的第一个选择操作立即返回</key-value-item>
+            <key-value-item item-key="abstract int select(long timeout) throws IOException">已准备好I/O操作的数量</key-value-item>
+            <key-value-item item-key="abstract Set<SelectionKey> selectedKeys()">当前SelectionKey集合</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>SelectableChannel</div>
+        <key-value-list>
+            <key-value-item item-key="final SelectableChannel configureBlocking(boolean block) throws IOException">配置是否可阻塞</key-value-item>
+            <key-value-item item-key="final SelectionKey register(Selector sel, int ops, Object att) throws ClosedChannelException">注册选择器</key-value-item>
+        </key-value-list>
+
+        <div class="divider mt-3 mb-3"></div>
+        <div>Selector Server</div>
+        <div lang="java" highlight="{{moduleFilePath('/../script/SelectorServer.java')}}"></div>
+    </div>
+</div>
